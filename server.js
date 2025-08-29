@@ -7,7 +7,7 @@ const app = express()
 
 app.use(express.json())
 app.use(cors({
-  origin: ['http://localhost:5173', 'https://caualemes.github.io/cadUsers-/'],
+  origin: ['http://localhost:5173', 'https://caualemes.github.io/cadUsers-/', 'https://caualemes.github.io/cadUser-site/'],
   methods: ['GET','POST','PUT','DELETE'],
   credentials: true
 }))
