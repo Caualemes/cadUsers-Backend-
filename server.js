@@ -6,7 +6,12 @@ const prisma = new PrismaClient()
 const app = express()
 
 app.use(express.json())
-app.use(cors())
+app.use(cors({
+  origin: ['http://localhost:5173', 'https://github.com/Caualemes/cadUsers-.git'],
+  methods: ['GET','POST','PUT','DELETE'],
+  credentials: true
+}))
+
 
 // CREATE
 app.post('/usuarios', async (req, res) => {
