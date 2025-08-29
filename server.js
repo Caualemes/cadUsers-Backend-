@@ -2,19 +2,23 @@ import express from 'express'
 import cors from 'cors'
 import { PrismaClient } from '@prisma/client'
 
-const prisma = new PrismaClient()
-const app = express()
+const express = require('express');
+const cors = require('cors');
+const app = express();
 
 app.use(express.json())
 
+// Configuração CORS ANTES das rotas
 app.use(cors({
   origin: [
-    "http://localhost:5173",              // local
-    "https://caualemes.github.io/cadUser-site/" // GitHub Pages
+    'http://localhost:3000',
+    'http://localhost:4173', 
+    'https://caualemes.github.io'
   ],
-  methods: ["GET", "POST", "PUT", "DELETE"],
   credentials: true
 }));
+
+// Suas outras configurações...
 
 
 // CREATE
